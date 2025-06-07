@@ -1,18 +1,22 @@
 import './App.css'
 import Button from './components/Button/Button'
+import { useState } from 'react';
+import Display from './components/Display/Display';
 
 function App() {
+  const [count, setCount] = useState(0);
 
   const handleClick = () => {
-    console.log('Button clicked');
+    setCount(count + 1);
   }
 
   return (
     <>
       <h1>Hello World</h1>
       <Button type="button" disabled={false} onClick={handleClick}>
-        <span>ボタン</span>
+        ボタン
       </Button>
+      <Display count={count} />
     </>
   )
 }
